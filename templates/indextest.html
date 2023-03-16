@@ -217,6 +217,14 @@
             hideSpinner();
             document.getElementById("answer").style.display = "block";
         });
+        async function sendTranscribedText(transcribedText) {
+            const formData = new FormData();
+            formData.append("user_text", transcribedText);
+
+            const response = await fetch("/search", {
+                method: "POST",
+                body: formData,
+            });
     </script>
 </body>
 
